@@ -13,31 +13,30 @@ import java.util.Map;
  * 
  * You may assume that each input would have exactly one solution.
  * 
- * Input: numbers={2, 7, 11, 15}, target=9
- * Output: index1=1, index2=2
+ * Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2
  * 
  * @author praveen
  *
  */
 public class TwoSum {
 
-	public static int[] findIndexesForSum(int[] numbers, int target) {
-		int[] output = new int[2];
-		output[0] = output[1] = 0;
-		Map<Integer, Integer> numMap = new HashMap<Integer, Integer>();
+    public static int[] findIndexesForSum(int[] numbers, int target) {
+        int[] output = new int[2];
+        output[0] = output[1] = 0;
+        Map<Integer, Integer> numMap = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) {
-			if (numMap.containsKey(target - numbers[i])) {
-				output[0] = numMap.get(target - numbers[i]);
-				output[1] = i + 1;
-				return output;
-			} else {
-				numMap.put(numbers[i], i + 1);
-			}
+            if (numMap.containsKey(target - numbers[i])) {
+                output[0] = numMap.get(target - numbers[i]);
+                output[1] = i + 1;
+                return output;
+            } else {
+                numMap.put(numbers[i], i + 1);
+            }
 
-		}
+        }
 
-		// not found
-		return output;
-	}
+        // not found
+        return output;
+    }
 
 }
